@@ -45,6 +45,8 @@ Wuhan University, AutoLab, SAI, Shanghai Jiao Tong University, Anyverse Dynamics
 
 3DVQL covers 8 meta categories, including **Grocery**, **Person**, **Sports equipment**, **Household items**, **Consumer electronics**, **Vehicles**, **Leisure goods**, and **Animal**.
 
+<img src="assets/pie_and_bar_compact.png" width="110%">
+
 ### :small_blue_diamond: Evaluation Metrics
 
 We evaluate 3D visual query localization under the Top-1 retrieval setting with the following metrics:
