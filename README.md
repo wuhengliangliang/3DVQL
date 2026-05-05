@@ -29,7 +29,7 @@ Wuhan University, AutoLab, SAI, Shanghai Jiao Tong University, Anyverse Dynamics
 ## :camera: Samples
 
 <!-- Please replace the following image path with the actual sample visualization in your repository. -->
-<img src="assets/3DVQL_samples.png" width="110%">
+<img src="assets/example.pdf" width="110%">
 
 **Figure:** Visualization examples of 3DVQL. Each example sequence contains calibrated point clouds, RGB images, and depth images, together with query-driven response track annotations in 3D space.
 
