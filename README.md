@@ -73,7 +73,7 @@ We evaluate 3D visual query localization under the Top-1 retrieval setting with 
 ### :small_blue_diamond: Qualitative Evaluation
 
 <!-- Please replace the following image path with the actual qualitative result in your repository. -->
-<img src="assets/3DVQL_qualitative.png" width="110%">
+<img src="assets/evla_vis_method.png" width="110%">
 
 **Figure:** Qualitative comparison of AF, GAF, PAF, LaF, and ground truth on 3DVQL. LaF provides more stable and accurate 9 DoF spatio-temporal localization in complex multimodal 3D scenes.
 
@@ -150,7 +150,7 @@ python tools/eval_3dvql.py \
 ## :wrench: Method Overview
 
 <!-- Please replace the following image path with the actual framework figure in your repository. -->
-<img src="assets/LaF_framework.png" width="110%">
+<img src="assets/model_laf.png" width="110%">
 
 **LaF** lifts 2D image features into the 3D space and performs depth-aware attention with 3D voxel features. The geometry-aware fusion module aligns RGB and point cloud features under the camera frustum, followed by query-conditioned spatial reasoning, spatio-temporal modeling, and 9 DoF 3D box prediction.
 
