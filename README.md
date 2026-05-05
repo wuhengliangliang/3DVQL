@@ -165,7 +165,7 @@ If you find 3DVQL useful, please consider giving this repository a star and citi
 ```bibtex
 @article{peng2026towards,
   title={Towards Visual Query Localization in the 3D World},
-  author={Peng, Liang and Tan, Bohan and Zhang, Zhipeng and Li, Haobo and Jiao, Yifan and Dong, Xingping and Zhang, Libo},
+  author={Liang Peng and Bohan Tan and Zhipeng Zhang and Haobo Li and Yifan Jiao and Xingping Dong and Libo Zhang},
   journal={arXiv preprint arXiv:2605.01498},
   year={2026}
 }
