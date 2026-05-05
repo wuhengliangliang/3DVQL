@@ -9,7 +9,7 @@ Wuhan University, AutoLab, SAI, Shanghai Jiao Tong University, Anyverse Dynamics
 <br>
 
 <!-- Please replace the following image path with the actual teaser figure in your repository. -->
-<img src="assets/3DVQL_teaser.png" width="110%">
+<img src="assets/3DVQL.png" width="110%">
 
 **Figure:** We introduce [**3DVQL**](https://arxiv.org/abs/2605.01498), the first benchmark towards **3D multimodal visual query localization**. 3DVQL extends visual query localization from 2D videos to 3D multimodal spaces. Each sequence provides aligned **point clouds**, **RGB images**, and **depth images**, enabling query-driven localization of the most recent target occurrence in 3D space.
 
