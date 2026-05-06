@@ -1,0 +1,103 @@
+exp_name: 'train'
+exp_group: 'vq2d'
+output_dir: './output/'
+log_dir: './log'
+workers: 4
+print_freq: 10
+vis_freq: 1000
+eval_vis_freq: 100
+seed: 42
+
+# dataset config（与上面的接口对齐）
+dataset:
+  root: '/mnt/data_2/pl/data_trian'   # ← 改成你ego4d根路径
+  name: 'VQLOC'
+  name_val: 'VQLOC'
+  query_size: 448
+  clip_size_fine: 448
+  clip_size_coarse: 448
+  clip_num_frames: 20
+  clip_num_frames_val: 20
+  clip_sampling: 'rand'
+  clip_reader: 'decord_random'
+  clip_reader_val: 'decord_balance'
+  frame_interval: 1
+  query_square: True
+  padding_value: 'zero' # ['mean', 'zero']
+
+# model config（不改网络结构；保持与上面一致的关键键）
+model:
+  backbone_name: 'dinov2'
+  backbone_type: 'vitb14'
+  bakcbone_use_mae_weight: False
+  fix_backbone: True
+  num_transformer: 3
+  type_transformer: 'global'
+  resolution_transformer: 8
+  resolution_anchor_feat: 16
+  pe_transformer: 'zero'
+  window_transformer: 5
+  positive_threshold: 0.5   # 与上面保持一致
+  positive_topk: 5
+  trans_dim: 384
+  # 可保留3D点云骨干配置（即使当前模型不用，也不影响）
+  backbone3d:
+    type: DGCNN
+    layers_cfg:
+      - { mlps: [0, 64, 64, 128],   use_xyz: True, sample_method: Range, nsample: 32 }
+      - { mlps: [128, 128, 128, 128], use_xyz: True, sample_method: Range, nsample: 32 }
+      - { mlps: [128, 256, 256, 256], use_xyz: True, sample_method: Range, nsample: 32 }
+
+# loss config（3D对齐，不影响dataset接口）
+loss:
+  weight_bbox_center: 1.0
+  weight_bbox_size: 1.0
+  weight_bbox_rot: 0.1
+  weight_bbox_distance: 0.3
+  weight_bbox_giou: 0.3
+  weight_bbox_ratio: 1.0
+  weight_prob: 100.0
+  prob_bce_weight: [1.0, 1.0]
+
+# training config
+train:
+  resume: True
+  batch_size: 2
+  total_iteration: 600000
+  lr: 0.0003
+  weight_decay: 0.005
+  schedualr_milestones: [7000, 14000, 20000, 25000]
+  schedular_gamma: 0.3
+  grad_max: 20.0
+  accumulation_step: 1
+  aug_clip: False
+  aug_query: False
+  aug_clip_iter: -1
+  aug_brightness: 0.3
+  aug_contrast: 0.3
+  aug_saturation: 0.2
+  aug_crop_scale: 0.8
+  aug_crop_ratio_min: 0.8
+  aug_crop_ratio_max: 1.2
+  aug_affine_degree: 90
+  aug_affine_translate: 0.2
+  aug_affine_scale_min: 0.8
+  aug_affine_scale_max: 1.2
+  aug_affine_shear_min: -15.0
+  aug_affine_shear_max: 15.0
+  aug_prob_color: 1.0
+  aug_prob_flip: 0.5
+  aug_prob_crop: 1.0
+  aug_prob_affine: 1.0
+  use_hnm: False # True
+
+# test config
+test:
+  batch_size: 1
+  compute_metric: True
+
+# iterations（与上面保持一致）
+iterations:
+  topK_nums: 3
+  topK_threshold: 0.7
+  query_iter: 2
