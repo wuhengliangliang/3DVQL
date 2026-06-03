@@ -156,7 +156,7 @@ bash train.sh
 ######### eval #########
 # build gt file
 python build_gt_file.py \
-    --data-path /mnt/data_2/pl/3DVQL_Test_V2 \
+    --data-path your_data_path \
     --out output/VQLOC/infer_outputs/like_ego4d/_gt.json.gz
 
 bash inference_predict.sh
@@ -166,7 +166,7 @@ bash inference_results.sh
 
 
 # eval
-python /mnt/data_2/pl/3DVQL/evaluate.py
+python ./evaluate.py
 ```
 
 ## :wrench: Method Overview
