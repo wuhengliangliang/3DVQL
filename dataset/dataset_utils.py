@@ -8,7 +8,6 @@ import torch.optim
 import itertools
 import argparse
 from dataset.base_dataset import QueryVideoDataset
-from dataset.egotracks_dataset import EgoTracksDataset
 import kornia
 import kornia.augmentation as K
 from kornia.constants import DataKey

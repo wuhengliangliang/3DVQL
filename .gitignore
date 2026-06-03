@@ -1,3 +1,7 @@
 *.pyc
-
+*.vscode
 pv_rcnn_8369.pth
+output/
+
+log/
+eval/

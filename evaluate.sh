@@ -1,0 +1,2 @@
+CUDA_VISIBLE_DEVICES=0,1,2,3 \
+python evaluate.py --eval --gt-file /mnt/data_2/pl/3DVQL/output/VQLOC/infer_outputs/like_ego4d/_gt.json.gz --pred-file /mnt/data_2/pl/3DVQL/output/VQLOC/infer_outputs/like_ego4d/_results.json.gz   

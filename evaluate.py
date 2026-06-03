@@ -2,7 +2,7 @@ import argparse
 import json
 
 import tqdm
-from metrics.metrics import compute_visual_query_metrics
+from eval.metrics.metrics import compute_visual_query_metrics
 from evaluation.structures import ResponseTrack, BBox, BBox3D
 
 

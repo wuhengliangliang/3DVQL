@@ -5,7 +5,7 @@ warnings.filterwarnings("ignore", message=r"xFormers is available.*", category=U
 # ==================================================
 # 4090 兼容性 & 性能稳定设置
 # ==================================================
-os.environ["CUDA_VISIBLE_DEVICES"] = "2,3"  # 可按需修改 GPU 编号
+# os.environ["CUDA_VISIBLE_DEVICES"] = "2,3"  # 可按需修改 GPU 编号
 os.environ["CUDA_LAUNCH_BLOCKING"] = "0"
 os.environ["TORCH_USE_CUDA_DSA"] = "0"  # 禁用 device-side assert
 os.environ["NCCL_P2P_DISABLE"] = "1"  # 某些多GPU集群上更稳定
@@ -167,6 +167,7 @@ def parse_args():
     parser.add_argument('--cfg', default='config/eval.yaml', type=str)
     parser.add_argument("--eval", action="store_true", help="evaluate model")
     parser.add_argument("--debug", action="store_true", help="debug mode")
+    parser.add_argument("--data", type=str, help="path to evaluation data")
     args, _ = parser.parse_known_args()
     update_config(args.cfg)
     return args
@@ -183,7 +184,7 @@ if __name__ == '__main__':
     random.seed(config.seed)
 
     mode = 'test_unannotated' if args.eval else 'val'
-    annotation_path = '/data_0/pl/VQL_Data/VQL_Data_test'
+    annotation_path = args.data if args.data else '/data_0/pl/VQL_Data/VQL_Data_test'
     annotations = eval_utils.load_annotations(annotation_path)
     clipwise_annotations_list = eval_utils.convert_annotations_to_clipwise_list(annotations)
 

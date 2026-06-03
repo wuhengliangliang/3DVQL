@@ -142,11 +142,31 @@ All 9 DoF 3D bounding boxes are defined in the camera coordinate system.
 We will provide a Python evaluation toolkit for 3DVQL. The toolkit will support the official evaluation metrics used in our paper, including **tAP**, **3D-stAP**, **Succ.**, and **Rec.%**.
 
 ```bash
+
 # Example usage, to be updated after release
-python tools/eval_3dvql.py \
-    --pred_path /path/to/predictions.json \
-    --gt_path /path/to/annotations.json \
-    --metric all
+git clone https://github.com/wuhengliangliang/3DVQL
+cd VQL3D
+
+conda env create -f environment.yml
+conda activate VQL3D
+
+######### train #########
+bash train.sh
+
+######### eval #########
+# build gt file
+python build_gt_file.py \
+    --data-path /mnt/data_2/pl/3DVQL_Test_V2 \
+    --out output/VQLOC/infer_outputs/like_ego4d/_gt.json.gz
+
+bash inference_predict.sh
+
+# build pred file
+bash inference_results.sh
+
+
+# eval
+python /mnt/data_2/pl/3DVQL/evaluate.py
 ```
 
 ## :wrench: Method Overview
