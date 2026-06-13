@@ -86,7 +86,22 @@ We evaluate 3D visual query localization under the Top-1 retrieval setting with 
 The dataset, models, and evaluation toolkit will be released at the project repository:
 
 * **Project Page:** [https://github.com/wuhengliangliang/3DVQL](https://github.com/wuhengliangliang/3DVQL)
-* **Dataset:** coming soon
+* **Dataset:**
+You need to download all the zips files using the provided links below for a full version of 3DVQL.
+
+### :small_blue_diamond: Downloading Links
+Below are the downloading links of 3DVQL. We offer two ways, `OneDrive` and `Baidu Cloud Drive`, to download the data.
+
+* **OneDrive**
+  - The downloading link for the **`training set`** is [here]().
+  - The downloading link for the **`test set`** is [here]().
+
+* **Baidu Cloud Drive**
+  - The downloading link for the **`training set`** is [here](https://pan.baidu.com/s/1OXkmodDD4GoIOw3wZCM2kg?pwd=DVQL) (you may need the extraction code: `DVQL`).
+  - The downloading link for the **`test set`** is [here](https://pan.baidu.com/s/1Dfht77YRegL1FM-igyeTtw?pwd=DVQL) (you may need the extraction code: `DVQL`).
+
+**Note:** The training set of 3DVQL consists of 19 Zip packages. The test set consists of 19 Zip packages.
+
 * **Model Zoo:** coming soon
 * **Evaluation Toolkit:** coming soon
 
