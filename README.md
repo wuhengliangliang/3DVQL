@@ -103,7 +103,6 @@ Below are the downloading links of 3DVQL. We offer two ways, `OneDrive` and `Bai
 **Note:** The training set of 3DVQL consists of 19 Zip packages. The test set consists of 19 Zip packages.
 
 * **Model Zoo:** coming soon
-* **Evaluation Toolkit:** coming soon
 
 ### :small_blue_diamond: Recommended Organization
 
