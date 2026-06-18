@@ -108,35 +108,28 @@ Below are the downloading links of 3DVQL. We offer two ways, `OneDrive` and `Bai
 
 A typical 3DVQL release can be organized as follows:
 
-```text
 3DVQL/
-├── train/
-│   ├── sequence_000001/
-│   │   ├── rgb/
-│   │   ├── depth/
-│   │   ├── point_cloud/
-│   │   ├── calibration/
-│   │   ├── query/
-│   │   └── annotation/
-│   │       ├── response_track.json
-│   │       └── boxes_9dof.json
-│   └── ...
-├── test/
-│   ├── sequence_000001/
-│   │   ├── rgb/
-│   │   ├── depth/
-│   │   ├── point_cloud/
-│   │   ├── calibration/
-│   │   ├── query/
-│   │   └── annotation/
-│   │       ├── response_track.json
-│   │       └── boxes_9dof.json
-│   └── ...
-└── metadata/
-    ├── categories.json
-    ├── split.json
-    └── scenarios.json
-```
+├── batch*/
+│   ├── img/
+│   │   ├── o_s/                    # search sequence
+│   │   │   └── Seq_xxxxxx/
+│   │   │       ├── camera_image_0/       # RGB frames
+│   │   │       ├── camera_image_3/       # another RGB camera view
+│   │   │       ├── lidar_point_cloud_0/  # point clouds
+│   │   │       └── Seq_xxxxxx.json       # camera calibration
+│   │   └── o_s_t/                  # query template
+│   │       └── Seq_xxxxxx/
+│   │           ├── camera_image_0/       # query RGB
+│   │           ├── camera_image_3/
+│   │           ├── lidar_point_cloud_0/  # query point cloud
+│   │           └── Seq_xxxxxx.json       # query calibration
+│   └── lable/
+│       ├── o_s/                    # 9DoF annotations for search sequence
+│       │   └── Seq_xxxxxx/
+│       │       └── Seq_xxxxxx.json
+│       └── o_s_t/                  # 9DoF annotations for query template
+│           └── Seq_xxxxxx/
+│               └── Seq_xxxxxx.json
 
 ### :small_blue_diamond: Format of Each Sequence
 
