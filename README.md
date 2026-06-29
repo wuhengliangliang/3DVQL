@@ -108,6 +108,7 @@ Below are the downloading links of 3DVQL. We offer two ways, `OneDrive` and `Bai
 
 A typical 3DVQL release can be organized as follows:
 
+```text
 3DVQL/
 ├── batch*/
 │   ├── img/
@@ -123,13 +124,14 @@ A typical 3DVQL release can be organized as follows:
 │   │           ├── camera_image_3/
 │   │           ├── lidar_point_cloud_0/  # query point cloud
 │   │           └── Seq_xxxxxx.json       # query calibration
-│   └── lable/
+│   └── label/
 │       ├── o_s/                    # 9DoF annotations for search sequence
 │       │   └── Seq_xxxxxx/
 │       │       └── Seq_xxxxxx.json
 │       └── o_s_t/                  # 9DoF annotations for query template
 │           └── Seq_xxxxxx/
 │               └── Seq_xxxxxx.json
+```
 
 ### :small_blue_diamond: Format of Each Sequence
 
