@@ -1,5 +1,6 @@
 from typing import List
 import torch
+import numpy as np
 
 class BBox:
     def __init__(self, fno, x1, y1, x2, y2):
@@ -75,6 +76,17 @@ class BBox3D:
             self.pitch,
             self.yaw,
         ], dtype=torch.float32).detach()
+    
+    def to_7d_tensor_list(self):
+        return torch.tensor([
+            self.x,
+            self.y,
+            self.z,
+            self.l,
+            self.w,
+            self.h,
+            self.yaw,
+        ], dtype=torch.float32).detach()
 
     def to_json(self):
         return {
@@ -89,6 +101,8 @@ class BBox3D:
             "pitch": float(self.pitch),
             "yaw": float(self.yaw),
         }
+    def center(self):
+        return np.array([self.x, self.y, self.z])
 
     @staticmethod
     def from_json(data):

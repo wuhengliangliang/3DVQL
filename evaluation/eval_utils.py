@@ -8,7 +8,7 @@ import pandas as pd
 def load_annotations(data_path) -> List[Dict[str, Any]]:
     annotations: List[Dict[str, Any]] = []
     batch_ids = _get_available_batch_ids(data_path)
-    batch_ids = [1]
+    # batch_ids = [1]
     for batch_id in batch_ids:
         scene_ids = _get_available_scene_ids(data_path, batch_id)
         for scene_id in tqdm(scene_ids, desc='[%6s]Loading annos' % f'batch{batch_id}'):
