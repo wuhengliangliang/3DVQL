@@ -97,7 +97,7 @@ Below are the downloading links of 3DVQL. We offer two ways, `OneDrive` and `Bai
   - The downloading link for the **`test set`** is [here]().
 
 * **Baidu Cloud Drive**
-  - The downloading link for the **`training set`** is [here](https://pan.baidu.com/s/1OXkmodDD4GoIOw3wZCM2kg?pwd=DVQL) (you may need the extraction code: `DVQL`).
+  - The downloading link for the **`training set`** is [here](https://pan.baidu.com/s/1xYL1EFEV7R0eM30mhF2vHw?pwd=DVQL) (you may need the extraction code: `DVQL`).
   - The downloading link for the **`test set`** is [here](https://pan.baidu.com/s/1TZ5ed5s5jsmlhVfwxmZtOw?pwd=DVQL) (you may need the extraction code: `DVQL`).
 
 **Note:** The training set of 3DVQL consists of 19 Zip packages. The test set consists of 19 Zip packages.
