@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="title" content="3DVQL: Towards Visual Query Localization in the 3D World">
+  <meta name="description" content="3DVQL is a CVPR 2026 benchmark for multimodal visual query localization in the 3D world.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="3DVQL">
+  <meta property="og:title" content="3DVQL: Towards Visual Query Localization in the 3D World">
+  <meta property="og:description" content="A benchmark and Lift-and-Fusion method for 3D visual query localization.">
+  <meta property="og:image" content="assets/images/teaser.webp">
+  <title>3DVQL: Towards Visual Query Localization in the 3D World</title>
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+  <button class="scroll-to-top" type="button" title="Scroll to top" aria-label="Scroll to top">
+    <span class="icon"><i class="fas fa-arrow-up"></i></span>
+  </button>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">3DVQL: Towards Visual Query Localization in the 3D World</h1>
+              <h2 class="subtitle is-4 venue">CVPR 2026</h2>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Liang Peng<sup>*</sup>,</span>
+                <span class="author-block">Bohan Tan<sup>*</sup>,</span>
+                <span class="author-block">Zhipeng Zhang<sup>#</sup>,</span>
+                <span class="author-block">Haobo Li,</span>
+                <span class="author-block">Yifan Jiao,</span>
+                <span class="author-block">Xingping Dong<sup>+</sup>,</span>
+                <span class="author-block">Libo Zhang</span>
+              </div>
+
+              <div class="is-size-5 publication-authors affiliations">
+                <span class="author-block">Wuhan University</span>
+                <span class="author-block">AutoLab, SAI, Shanghai Jiao Tong University</span>
+                <span class="author-block">Anyverse Dynamics</span>
+                <span class="author-block">University of Chinese Academy of Sciences</span>
+                <span class="author-block">Institute of Software, Chinese Academy of Sciences</span>
+              </div>
+              <p class="author-note">* equal contribution &nbsp; + first corresponding author &nbsp; # second corresponding author</p>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2605.01498" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-file-alt"></i></span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://github.com/wuhengliangliang/3DVQL" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="#dataset" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-database"></i></span>
+                      <span>Dataset</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="#visual-wall" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-film"></i></span>
+                      <span>Visuals</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="#bibtex" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-quote-right"></i></span>
+                      <span>BibTeX</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section teaser-section">
+      <div class="container is-max-desktop">
+        <figure class="main-figure">
+          <img src="assets/images/teaser.webp" alt="3DVQL teaser" width="1072" height="280">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section visual-wall-section" id="visual-wall">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">3DVQL Visualization Gallery</h2>
+        <p class="subtitle is-5 has-text-centered visual-wall-subtitle">
+          Representative prediction videos from RGB, depth, and point-cloud streams.
+        </p>
+        <div class="visual-wall" aria-label="Representative animated 3DVQL visualizations">
+          <figure class="wall-item wall-item-large"><img src="assets/gif-wall/vis_01_test_o_s_batch10_Seq_002182.webp" alt="3DVQL visualization sequence 002182" width="320" height="120"><figcaption>Seq 002182</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_02_test_o_s_batch11_Seq_002153.webp" alt="3DVQL visualization sequence 002153" width="320" height="120"><figcaption>Seq 002153</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_03_test_o_s_batch12_Seq_001590.webp" alt="3DVQL visualization sequence 001590" width="320" height="120"><figcaption>Seq 001590</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_04_test_o_s_batch12_Seq_001688.webp" alt="3DVQL visualization sequence 001688" width="320" height="120"><figcaption>Seq 001688</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_05_test_o_s_batch13_Seq_001085.webp" alt="3DVQL visualization sequence 001085" width="320" height="120"><figcaption>Seq 001085</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_06_test_o_s_batch13_Seq_001224.webp" alt="3DVQL visualization sequence 001224" width="320" height="120"><figcaption>Seq 001224</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_07_test_o_s_batch15_Seq_000017.webp" alt="3DVQL visualization sequence 000017" width="320" height="120"><figcaption>Seq 000017</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_08_test_o_s_batch16_Seq_001304.webp" alt="3DVQL visualization sequence 001304" width="320" height="120"><figcaption>Seq 001304</figcaption></figure>
+          <figure class="wall-item wall-item-tall"><img src="assets/gif-wall/vis_09_test_o_s_batch16_Seq_001386.webp" alt="3DVQL visualization sequence 001386" width="320" height="120"><figcaption>Seq 001386</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_10_test_o_s_batch17_Seq_000411.webp" alt="3DVQL visualization sequence 000411" width="320" height="120"><figcaption>Seq 000411</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_11_test_o_s_batch19_Seq_000152.webp" alt="3DVQL visualization sequence 000152" width="320" height="120"><figcaption>Seq 000152</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_12_test_o_s_batch19_Seq_000262.webp" alt="3DVQL visualization sequence 000262" width="320" height="120"><figcaption>Seq 000262</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_13_test_o_s_batch2_Seq_000581.webp" alt="3DVQL visualization sequence 000581" width="320" height="120" loading="lazy"><figcaption>Seq 000581</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_14_test_o_s_batch3_Seq_000522.webp" alt="3DVQL visualization sequence 000522" width="320" height="120" loading="lazy"><figcaption>Seq 000522</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_15_test_o_s_batch4_Seq_001919.webp" alt="3DVQL visualization sequence 001919" width="320" height="120" loading="lazy"><figcaption>Seq 001919</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_16_test_o_s_batch5_Seq_001816.webp" alt="3DVQL visualization sequence 001816" width="320" height="120" loading="lazy"><figcaption>Seq 001816</figcaption></figure>
+          <figure class="wall-item wall-item-wide"><img src="assets/gif-wall/vis_17_test_o_s_batch5_Seq_001860.webp" alt="3DVQL visualization sequence 001860" width="320" height="120" loading="lazy"><figcaption>Seq 001860</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_18_test_o_s_batch6_Seq_000666.webp" alt="3DVQL visualization sequence 000666" width="320" height="120" loading="lazy"><figcaption>Seq 000666</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_19_test_o_s_batch6_Seq_000761.webp" alt="3DVQL visualization sequence 000761" width="320" height="120" loading="lazy"><figcaption>Seq 000761</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_20_test_o_s_batch7_Seq_002243.webp" alt="3DVQL visualization sequence 002243" width="320" height="120" loading="lazy"><figcaption>Seq 002243</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_21_test_o_s_batch7_Seq_002287.webp" alt="3DVQL visualization sequence 002287" width="320" height="120" loading="lazy"><figcaption>Seq 002287</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_22_test_o_s_batch8_Seq_000871.webp" alt="3DVQL visualization sequence 000871" width="320" height="120" loading="lazy"><figcaption>Seq 000871</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_23_test_o_s_batch8_Seq_000965.webp" alt="3DVQL visualization sequence 000965" width="320" height="120" loading="lazy"><figcaption>Seq 000965</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_24_test_o_s_batch9_Seq_001998.webp" alt="3DVQL visualization sequence 001998" width="320" height="120" loading="lazy"><figcaption>Seq 001998</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_25_test_o_s_batch9_Seq_002064.webp" alt="3DVQL visualization sequence 002064" width="320" height="120" loading="lazy"><figcaption>Seq 002064</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_26_train_o_s_batch1_Seq_000658.webp" alt="3DVQL training visualization sequence 000658" width="320" height="120" loading="lazy"><figcaption>Seq 000658</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_27_train_o_s_batch2_Seq_000595.webp" alt="3DVQL training visualization sequence 000595" width="320" height="120" loading="lazy"><figcaption>Seq 000595</figcaption></figure>
+          <figure class="wall-item wall-item-wide"><img src="assets/gif-wall/vis_28_train_o_s_batch3_Seq_000508.webp" alt="3DVQL training visualization sequence 000508" width="320" height="120" loading="lazy"><figcaption>Seq 000508</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_29_train_o_s_batch3_Seq_000535.webp" alt="3DVQL training visualization sequence 000535" width="320" height="120" loading="lazy"><figcaption>Seq 000535</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_30_train_o_s_batch3_Seq_000555.webp" alt="3DVQL training visualization sequence 000555" width="320" height="120" loading="lazy"><figcaption>Seq 000555</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_31_train_o_s_batch4_Seq_001931.webp" alt="3DVQL training visualization sequence 001931" width="320" height="120" loading="lazy"><figcaption>Seq 001931</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_32_train_o_s_batch4_Seq_001961.webp" alt="3DVQL training visualization sequence 001961" width="320" height="120" loading="lazy"><figcaption>Seq 001961</figcaption></figure>
+          <figure class="wall-item wall-item-tall"><img src="assets/gif-wall/vis_33_train_o_s_batch5_Seq_001828.webp" alt="3DVQL training visualization sequence 001828" width="320" height="120" loading="lazy"><figcaption>Seq 001828</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_34_train_o_s_batch5_Seq_001854.webp" alt="3DVQL training visualization sequence 001854" width="320" height="120" loading="lazy"><figcaption>Seq 001854</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_35_train_o_s_batch5_Seq_001881.webp" alt="3DVQL training visualization sequence 001881" width="320" height="120" loading="lazy"><figcaption>Seq 001881</figcaption></figure>
+          <figure class="wall-item"><img src="assets/gif-wall/vis_36_train_o_s_batch5_Seq_001902.webp" alt="3DVQL training visualization sequence 001902" width="320" height="120" loading="lazy"><figcaption>Seq 001902</figcaption></figure>
+        </div>
+        <p class="visual-wall-caption">
+          Figure 1: Representative 3DVQL localization videos sampled from the new visualization set.
+        </p>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="abstract">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Visual query localization aims to predict the spatial-temporal response of the most recent occurrence
+                in a sequence given a query. While prior VQL research mainly focuses on 2D videos, <strong>3DVQL</strong>
+                makes the first attempt to study visual query localization in the 3D world. The benchmark contains
+                <strong>2,002</strong> sequences, around <strong>170K</strong> frames, and <strong>6.4K</strong>
+                response track segments from <strong>38</strong> object categories. Each sequence provides aligned
+                point clouds, RGB images, and depth images, with manually verified annotations for high-quality
+                multimodal 3D VQL evaluation. Based on this benchmark, we construct representative RGB-PC baselines
+                and introduce <strong>LaF</strong>, a lift and attention fusion algorithm that lifts 2D features into
+                3D space and improves multimodal visual query localization performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="benchmark">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">3DVQL Benchmark</h2>
+        <div class="columns is-centered statistic-row">
+          <div class="column has-text-centered"><p class="stat-number">2,002</p><p class="stat-label">Sequences</p></div>
+          <div class="column has-text-centered"><p class="stat-number">170K+</p><p class="stat-label">Annotated Frames</p></div>
+          <div class="column has-text-centered"><p class="stat-number">6.4K</p><p class="stat-label">Response Tracks</p></div>
+          <div class="column has-text-centered"><p class="stat-number">38</p><p class="stat-label">Object Classes</p></div>
+        </div>
+        <figure class="main-figure">
+          <img src="assets/images/statistics.webp" alt="3DVQL statistics" width="1800" height="494" loading="lazy">
+        </figure>
+        <figure class="table-figure">
+          <img src="assets/images/benchmark_table.png" alt="Benchmark comparison table" width="2401" height="464" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="samples">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Dataset Samples</h2>
+        <figure class="wide-figure">
+          <img src="assets/images/samples.webp" alt="3DVQL dataset samples" width="2200" height="827" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">LaF: Lift and Attention Fusion</h2>
+        <figure class="wide-figure">
+          <img src="assets/images/model_laf.webp" alt="LaF model architecture" width="2200" height="700">
+        </figure>
+        <div class="container is-max-desktop content has-text-justified method-text">
+          <p>
+            LaF lifts 2D pixel features into 3D space by expanding each image token along its viewing ray, then restricts
+            cross-modal attention to voxels inside the camera frustum. Multi-head attention along the depth axis aligns
+            RGB and point-cloud evidence, while query-conditioned decoding and a local-window spatiotemporal Transformer
+            model the most recent occurrence across the sequence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="results">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+        <figure class="table-figure result-table">
+          <img src="assets/images/laf_table.png" alt="LaF results table" width="1617" height="483">
+        </figure>
+        <div class="content has-text-centered result-summary">
+          <p>
+            LaF reaches <strong>46.041</strong> Succ. and <strong>0.222</strong> stAP<sub>0.05</sub>, improving
+            3D spatio-temporal localization over AF, GAF, and PAF baselines.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="qualitative">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+        <figure class="wide-figure">
+          <img src="assets/images/qualitative.webp" alt="Qualitative comparison" width="2200" height="731" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Additional Visualizations</h2>
+        <figure class="wide-figure">
+          <img src="assets/images/supp_vis.webp" alt="Supplementary visualization examples" width="2200" height="835" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Highlighted Dynamic Examples</h2>
+        <p class="subtitle is-5 has-text-centered demo-subtitle">
+          Larger animated examples showing multimodal 3DVQL predictions across diverse scenes and target categories.
+        </p>
+        <div class="columns is-centered is-variable is-4 is-multiline highlight-grid">
+          <div class="column is-6">
+            <figure class="demo-figure">
+              <img src="assets/highlight-visuals/highlight_01_seq_001816.webp" alt="Highlighted 3DVQL dynamic example sequence 001816" width="640" height="240" loading="lazy">
+              <figcaption>Dynamic localization example: Seq 001816</figcaption>
+            </figure>
+          </div>
+          <div class="column is-6">
+            <figure class="demo-figure">
+              <img src="assets/highlight-visuals/highlight_02_seq_001828.webp" alt="Highlighted 3DVQL dynamic example sequence 001828" width="640" height="240" loading="lazy">
+              <figcaption>Dynamic localization example: Seq 001828</figcaption>
+            </figure>
+          </div>
+          <div class="column is-6">
+            <figure class="demo-figure">
+              <img src="assets/highlight-visuals/highlight_03_seq_000262.webp" alt="Highlighted 3DVQL dynamic example sequence 000262" width="640" height="240" loading="lazy">
+              <figcaption>Dynamic localization example: Seq 000262</figcaption>
+            </figure>
+          </div>
+          <div class="column is-6">
+            <figure class="demo-figure">
+              <img src="assets/highlight-visuals/highlight_04_seq_001590.webp" alt="Highlighted 3DVQL dynamic example sequence 001590" width="640" height="240" loading="lazy">
+              <figcaption>Dynamic localization example: Seq 001590</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="dataset">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Dataset and Code</h2>
+        <div class="publication-links has-text-centered release-links">
+          <span class="link-block"><a href="https://github.com/wuhengliangliang/3DVQL#globe_with_meridians-downloading-3dvql" class="external-link button is-normal is-rounded is-dark">Download</a></span>
+          <span class="link-block"><a href="https://github.com/wuhengliangliang/3DVQL" class="external-link button is-normal is-rounded is-dark">Evaluation Toolkit</a></span>
+          <span class="link-block"><a href="https://arxiv.org/abs/2605.01498" class="external-link button is-normal is-rounded is-dark">Paper</a></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="poster">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Poster Preview</h2>
+        <figure class="wide-figure">
+          <img src="assets/images/poster.webp" alt="3DVQL poster preview" width="1800" height="1012" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="bibtex">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" type="button" title="Copy BibTeX">Copy</button>
+        </div>
+        <pre id="bibtex-code"><code>@inproceedings{peng2026towards,
+  title={Towards Visual Query Localization in the 3D World},
+  author={Peng, Liang and Tan, Bohan and Zhang, Zhipeng and Li, Haobo and Jiao, Yifan and Dong, Xingping and Zhang, Libo},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={41406--41415},
+  year={2026}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          This page follows the academic project page layout style used by AAD-1 and related research project pages.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/index.js"></script>
+</body>
+</html>

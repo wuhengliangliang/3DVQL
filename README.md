@@ -4,7 +4,7 @@
 Liang Peng<sup>\*</sup>, Bohan Tan<sup>\*</sup>, Zhipeng Zhang<sup>$\ddagger$</sup>, Haobo Li, Yifan Jiao, Xingping Dong<sup>$\dagger$</sup>, Libo Zhang<br>
 Wuhan University, AutoLab, SAI, Shanghai Jiao Tong University, Anyverse Dynamics, University of Chinese Academy of Sciences, Institute of Software, Chinese Academy of Sciences<br>
 (\*: equal contribution; $\dagger$: first corresponding author; $\ddagger$: second corresponding author)<br>
-[[`arXiv`](https://arxiv.org/abs/2605.01498)] [[`Project Page`](https://github.com/wuhengliangliang/3DVQL)] [[`Code`](https://github.com/wuhengliangliang/3DVQL)] [[`Dataset`](https://github.com/wuhengliangliang/3DVQL)]
+[[`arXiv`](https://arxiv.org/abs/2605.01498)] [[`Project Page`](https://wuhengliangliang.github.io/3DVQL/)] [[`Code`](https://github.com/wuhengliangliang/3DVQL)] [[`Dataset`](https://github.com/wuhengliangliang/3DVQL)]
 
 <br>
 
@@ -85,7 +85,7 @@ We evaluate 3D visual query localization under the Top-1 retrieval setting with 
 
 The dataset, models, and evaluation toolkit will be released at the project repository:
 
-* **Project Page:** [https://github.com/wuhengliangliang/3DVQL](https://github.com/wuhengliangliang/3DVQL)
+* **Project Page:** [https://wuhengliangliang.github.io/3DVQL/](https://wuhengliangliang.github.io/3DVQL/)
 * **Dataset:**
 You need to download all the zips files using the provided links below for a full version of 3DVQL.
 
