@@ -137,15 +137,15 @@ body {
   margin: 0 auto 1.35rem;
 }
 
-.visual-wall {
+.outdoor-showcase {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
   max-width: 1180px;
   margin: 0 auto;
 }
 
-.wall-item {
+.outdoor-card {
   position: relative;
   margin: 0;
   overflow: hidden;
@@ -157,44 +157,26 @@ body {
   transition: var(--transition);
 }
 
-.wall-item:hover {
+.outdoor-card:hover {
   border-color: rgba(37, 99, 235, 0.42);
   box-shadow: 0 7px 18px rgba(15, 23, 42, 0.12);
 }
 
-.wall-item img {
+.outdoor-card img {
   display: block;
   width: 100%;
   height: auto;
-  min-height: 0;
-  aspect-ratio: 8 / 3;
-  object-fit: cover;
-  filter: saturate(0.82) brightness(0.92) contrast(0.94);
+  aspect-ratio: 990 / 440;
+  object-fit: contain;
+  background: #05070b;
 }
 
-.wall-item-large {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-
-.wall-item-large img {
-  aspect-ratio: 8 / 3;
-}
-
-.wall-item-wide {
-  grid-column: span 1;
-}
-
-.wall-item-tall {
-  grid-row: span 1;
-}
-
-.wall-item-tall img {
-  min-height: 0;
-}
-
-.wall-item figcaption {
-  display: none;
+.outdoor-card figcaption {
+  padding: 0.6rem 0.75rem;
+  color: var(--text-primary);
+  background: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .visual-wall-caption {
@@ -455,8 +437,8 @@ body {
     padding: 2.4rem 0.75rem;
   }
 
-  .visual-wall {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .outdoor-showcase {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 7px;
   }
 
@@ -471,24 +453,12 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .visual-wall {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .outdoor-showcase {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
-  .wall-item-large,
-  .wall-item-wide,
-  .wall-item-tall {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-
-  .wall-item img,
-  .wall-item-large img,
-  .wall-item-tall img {
-    min-height: 0;
-  }
-
-  .wall-item figcaption {
-    font-size: 0.66rem;
+  .outdoor-card figcaption {
+    font-size: 0.78rem;
   }
 }
